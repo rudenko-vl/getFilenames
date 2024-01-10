@@ -7,17 +7,19 @@ btn.addEventListener('click', getFileNames)
 
 let arr = []
 
+
 function getFileNames() {
     const fileInput = document.getElementById('fileInput');
     const selectedFiles = fileInput.files;
 
     if (selectedFiles.length > 0) {
+        btn.disabled = true;
+        btn.classList.add('disabled')
         for (let i = 0; i < selectedFiles.length; i++) {
-            // arr.push(selectedFiles[i].name.slice(0, -5))
             arr.push(selectedFiles[i].name.replace(/\..*$/, ''))
         }
     } else {
-        console.log('Файлы не выбраны.');
+        alert('Файлы не выбраны.');
     }
 
     arr.map((str) => {
@@ -30,5 +32,4 @@ function getFileNames() {
 
 delBtn.addEventListener('click', () => {
     location.reload()
-
 })

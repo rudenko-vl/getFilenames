@@ -46,3 +46,12 @@ input:hover {
 .btn {
     width: 300px;
 }
+
+.disabled {
+    background-color: #475761;
+    opacity: 0.7;
+}
+
+.disabled:hover {
+    background-color: #475761;
+}
